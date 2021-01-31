@@ -49,4 +49,4 @@ const data = {
     tags: Object.values(ideasByTag)
 }
 
-fs.writeFileSync('./mission-ideas.html', compiledMissionIdeasTemplate(data));
+fs.writeFileSync('./index.html', compiledMissionIdeasTemplate(data));
