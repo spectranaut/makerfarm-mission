@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Makerfarm Mission Ideas</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    </style>
+  </head>
+<body>
+<h1>Makerfarm Mission Ideas</h1>
+
+{{#tags}}
+<details>
+    <summary id={{tag_url_frag}}>{{tag_title}} ({{idea_count}} mentions)</summary>
+    <ul>
+      <table>
+        {{#ideas}}
+        <tr>
+          <td>
+            {{idea}}
+          </td>
+          <td>
+            {{#idea_tags}}
+            <a href="#{{tag_url_frag}}">{{tag}}</a>
+            {{/idea_tags}}
+          </td>
+        </tr>
+        {{/ideas}}
+      </table>
+    </ul>
+</details>
+{{/tags}}
+
+</body>
+</html>
