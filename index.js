@@ -9,6 +9,7 @@ let rawData = fs.readFileSync('./mission-cats.csv', 'utf8');
 let records = parse(rawData, {
   skip_empty_lines: true
 });
+records.shift(); // get ride of column data
 
 /* ABSTRACT TAGS */
 // get hrefs and colors
