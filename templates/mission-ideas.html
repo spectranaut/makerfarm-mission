@@ -5,32 +5,100 @@
     <title>Makerfarm Mission Ideas</title>
     <link rel="stylesheet" href="style.css">
     <style>
+      .statement {
+          padding: .5rem;
+      }
+
+      .tags-abstract {
+          width: 17rem;
+      }
+
+      .tags-concrete {
+          width: 17rem;
+      }
+
+      table {
+          border-collapse: collapse;
+      }
+
+      td {
+          border-top: 1px solid black;
+          border-bottom: 1px solid black;
+      }
+
+      .tag {
+          display: block;
+          padding: 8px 20px;
+          text-decoration:none;
+          border-radius:5px;
+          cursor:pointer;
+          margin: 4px;
+          color: black;
+      }
+
+      summary {
+          margin-top: .5rem;
+      }
+
+      .current-mission {
+          font-weight: bold;
+      }
     </style>
   </head>
 <body>
 <h1>Makerfarm Mission Ideas</h1>
 
-{{#tags}}
+<h2>Grouped into high-level concepts</h2>
+
+<p>Statements from <a href="https://bayareamaker.farm/mission">our existing mission</a> are in <b>bold</b>.</p>
+
+{{#tags_abstract}}
 <details>
     <summary id={{tag_url_frag}}>{{tag_title}} ({{idea_count}} mentions)</summary>
     <ul>
       <table>
         {{#ideas}}
-        <tr>
-          <td>
+        <tr class="{{#current_mission}}current-mission{{/current_mission}}">
+          <td class="statement">
             {{idea}}
           </td>
-          <td>
-            {{#idea_tags}}
-            <a href="#{{tag_url_frag}}">{{tag}}</a>
-            {{/idea_tags}}
+          <td class="tags-abstract">
+            {{#idea_tags_abstract}}
+            <a style="background-color: {{tag_color}};" class="tag" href="#{{tag_url_frag}}">{{tag}}</a>
+            {{/idea_tags_abstract}}
           </td>
         </tr>
         {{/ideas}}
       </table>
     </ul>
 </details>
-{{/tags}}
+{{/tags_abstract}}
+
+<h2>Grouped into descriptions of what we are doing</h2>
+
+<p>Statements from <a href="https://bayareamaker.farm/mission">our existing mission</a> are in <b>bold</b>.</p>
+
+{{#tags_concrete}}
+<details>
+    <summary id={{tag_url_frag}}>{{tag_title}} ({{idea_count}} mentions)</summary>
+    <ul>
+      <table>
+        {{#ideas}}
+        <tr class="{{#current_mission}}current-mission{{/current_mission}}">
+          <td class="statement">
+            {{idea}}
+          </td>
+          <td class="tags-concrete">
+            {{#idea_tags_concrete}}
+            <a style="background-color: {{tag_color}};" class="tag" href="#{{tag_url_frag}}">{{tag}}</a>
+            {{/idea_tags_concrete}}
+          </td>
+        </tr>
+        {{/ideas}}
+      </table>
+    </ul>
+</details>
+{{/tags_concrete}}
 
 </body>
 </html>
