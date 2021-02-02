@@ -5,6 +5,10 @@
     <title>Makerfarm Mission Ideas</title>
     <link rel="stylesheet" href="style.css">
     <style>
+      .mentions-span {
+          float: right;
+      }
+
       .statement {
           padding: .5rem;
       }
@@ -54,7 +58,7 @@
 
 {{#tags_abstract}}
 <details>
-    <summary id={{tag_url_frag}}>{{tag_title}} ({{idea_count}} mentions)</summary>
+    <summary id={{tag_url_frag}}>{{tag_title}}<span class="mentions-span">({{idea_count}} mentions)</span></summary>
     <ul>
       <table>
         {{#ideas}}
@@ -80,7 +84,7 @@
 
 {{#tags_concrete}}
 <details>
-    <summary id={{tag_url_frag}}>{{tag_title}} ({{idea_count}} mentions)</summary>
+    <summary id={{tag_url_frag}}>{{tag_title}}<span class="mentions-span">({{idea_count}} mentions)</span></summary>
     <ul>
       <table>
         {{#ideas}}
